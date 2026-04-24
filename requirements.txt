@@ -1,0 +1,5 @@
+rasa==3.6.20
+google-genai
+psycopg2-binary
+pgvector
+python-dotenv

@@ -1,0 +1,30 @@
+version: "3.1"
+
+stories:
+- story: saludo y consulta RAG
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_product_rag
+  - action: action_rag_answer
+
+- story: saludo y consulta dólar
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_api_external
+  - action: action_call_external_api
+
+- story: saludo y despedida
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: consulta RAG y despedida
+  steps:
+  - intent: ask_product_rag
+  - action: action_rag_answer
+  - intent: goodbye
+  - action: utter_goodbye

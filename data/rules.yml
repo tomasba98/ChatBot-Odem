@@ -1,0 +1,37 @@
+version: "3.1"
+
+rules:
+- rule: Responder siempre al saludo
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Responder despedida
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Manejar Chit-chat (Interrupciones)
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+
+- rule: Manejar out of scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: Fallback / No entiende
+  steps:
+  - intent: nlu_fallback
+  - action: utter_no_input
+
+- rule: Ejecutar RAG al preguntar por productos
+  steps:
+  - intent: ask_product_rag
+  - action: action_rag_answer
+
+- rule: Llamada a API externa
+  steps:
+  - intent: ask_api_external
+  - action: action_call_external_api

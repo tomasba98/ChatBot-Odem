@@ -1,0 +1,85 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hola
+    - buenas
+    - cómo va
+    - buen día
+    - buenas tardes
+    - buenas noches
+    - hola, ¿cómo estás?
+    - ey, hola
+    - qué tal
+    - saludos
+
+- intent: goodbye
+  examples: |
+    - adiós
+    - chau
+    - hasta luego
+    - nos vemos
+    - hasta pronto
+    - me voy
+    - chau chau
+    - bye
+    - hasta mañana
+    - gracias, adiós
+
+- intent: ask_product_rag
+  examples: |
+    - ¿Qué productos hay disponibles?
+    - ¿Qué mesas hay disponibles?
+    - Decime la cantidad de ordenes del dia de hoy
+    - Decime la cantidad de sesiones del dia de hoy
+    - ¿Cuáles son los productos del menú?
+    - ¿Qué tienen para comer?
+    - ¿Cuántas mesas están ocupadas?
+    - ¿Cuántas órdenes hubo hoy?
+    - muestrame los productos disponibles
+    - ¿qué categorías de productos hay?
+    - ¿cuánto cuesta la pizza?
+    - ¿hay productos sin stock?
+    - ¿cuáles son las órdenes pendientes?
+    - ¿cuánto se recaudó hoy?
+    - ¿qué mesas están libres?
+
+- intent: ask_api_external
+  examples: |
+    - Decime el valor del dólar
+    - ¿A cuánto está el dólar?
+    - cuál es la cotización del dólar
+    - ¿cuánto vale el USD?
+    - valor del dólar hoy
+    - cotización dolar
+    - precio del dólar
+    - ¿a cuánto está el USD en pesos?
+    - cambio de moneda dólar
+    - tipo de cambio hoy
+
+- intent: chitchat
+  examples: |
+    - ¿Quién te creó?
+    - ¿Sos una persona?
+    - Contame un chiste
+    - Qué calor hace hoy
+    - ¿qué sos?
+    - ¿qué podés hacer?
+    - ¿sos un robot?
+    - ¿tenés sentimientos?
+    - hablame de vos
+    - ¿cuál es tu nombre?
+
+- intent: out_of_scope
+  examples: |
+    - ¿cuál es la capital de Francia?
+    - ¿me podés escribir código?
+    - quiero pedir un taxi
+    - ¿cuál es el mejor celular?
+    - hacéme un resumen de esta página web
+    - ¿cuál es el resultado del partido?
+    - traducime esto al inglés
+    - ¿cuándo es navidad?
+    - ¿me pods ayudar con mi tarea?
+    - busca información sobre clima

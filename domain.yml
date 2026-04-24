@@ -1,0 +1,33 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_product_rag
+  - ask_api_external
+  - chitchat
+  - out_of_scope
+
+responses:
+  utter_greet:
+  - text: "¡Hola! Soy el asistente de Ordem. ¿En qué puedo ayudarte hoy?"
+
+  utter_goodbye:
+  - text: "¡Hasta luego! Que tengas un excelente día."
+
+  utter_chitchat:
+  - text: "Entiendo, pero soy el asistente virtual de Ordem y solo puedo ayudarte con información del restaurante (menú, mesas, pedidos, etc.). ¿Tenés alguna consulta sobre eso?"
+
+  utter_no_input:
+  - text: "Parece que no estás ahí. Por seguridad, cerraré esta sesión. ¡Volvé cuando quieras!"
+
+  utter_out_of_scope:
+  - text: "Eso está fuera de mi área. Solo puedo ayudarte con información del restaurante Ordem."
+
+actions:
+  - action_rag_answer
+  - action_call_external_api
+
+session_config:
+  session_expiration_time: 5
+  carry_over_slots_to_new_session: false
