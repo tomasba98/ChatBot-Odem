@@ -7,6 +7,7 @@ intents:
   - ask_api_external
   - chitchat
   - out_of_scope
+  - refresh_knowledge
 
 responses:
   utter_greet:
@@ -24,9 +25,16 @@ responses:
   utter_out_of_scope:
   - text: "Eso está fuera de mi área. Solo puedo ayudarte con información del restaurante Ordem."
 
+  utter_refresh_started:
+  - text: "Actualizando la base de conocimiento con los datos más recientes del restaurante. Esto puede tardar unos segundos..."
+
+  utter_refresh_unauthorized:
+  - text: "Solo el personal autorizado puede actualizar la base de conocimiento."
+
 actions:
   - action_rag_answer
   - action_call_external_api
+  - action_refresh_knowledge
 
 session_config:
   session_expiration_time: 5

@@ -71,6 +71,19 @@ nlu:
     - hablame de vos
     - ¿cuál es tu nombre?
 
+- intent: refresh_knowledge
+  examples: |
+    - actualizá la base de conocimiento
+    - actualizar base de conocimiento
+    - refrescá el menú
+    - actualizar menú
+    - sincronizar datos
+    - actualizá los datos del restaurante
+    - refrescá la información del bot
+    - update knowledge base
+    - actualizar información
+    - refrescá los productos
+
 - intent: out_of_scope
   examples: |
     - ¿cuál es la capital de Francia?

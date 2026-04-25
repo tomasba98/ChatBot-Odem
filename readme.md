@@ -67,6 +67,7 @@ Usuario → Rasa NLU → intent: ask_product_rag
 | `goodbye` | Despedida | `utter_goodbye` |
 | `ask_product_rag` | Preguntas sobre el restaurante | `action_rag_answer` (RAG + Gemini) |
 | `ask_api_external` | Consulta del dólar | `action_call_external_api` |
+| `refresh_knowledge` | Actualizar base de conocimiento RAG | `action_refresh_knowledge` |
 | `chitchat` | Conversación fuera de tema | `utter_chitchat` (redirige al bot) |
 | `out_of_scope` | Preguntas irrelevantes | `utter_out_of_scope` |
 | `nlu_fallback` | Input vacío o incomprensible | `utter_no_input` |
@@ -97,6 +98,8 @@ La tabla vectorial contiene **46 entradas** generadas por `db_preparator.py`:
 | Resumen de usuarios | 1 | `users_summary` |
 
 Para actualizar los datos: `python db_preparator.py`
+
+También puede actualizarse en tiempo real desde el chat diciéndole al bot frases como *"actualizá la base de conocimiento"* o *"refrescá el menú"* (intent `refresh_knowledge`). El bot ejecuta `db_preparator.py` en segundo plano sin interrumpir la conversación.
 
 ---
 

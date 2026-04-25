@@ -1,4 +1,6 @@
 import os
+import sys
+import threading
 import requests
 from google import genai
 from typing import Any, Text, Dict, List
@@ -87,5 +89,32 @@ class ActionCallExternalApi(Action):
             dispatcher.utter_message(
                 text=f"No pude conectarme a la API de tipo de cambio: {str(e)}"
             )
+
+        return []
+
+
+class ActionRefreshKnowledge(Action):
+    def name(self) -> Text:
+        return "action_refresh_knowledge"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(response="utter_refresh_started")
+
+        def run_preparator():
+            script_path = os.path.join(
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                "db_preparator.py",
+            )
+            python_exec = sys.executable
+            os.system(f'"{python_exec}" "{script_path}"')
+
+        thread = threading.Thread(target=run_preparator, daemon=True)
+        thread.start()
 
         return []

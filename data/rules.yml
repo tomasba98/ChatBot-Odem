@@ -35,3 +35,8 @@ rules:
   steps:
   - intent: ask_api_external
   - action: action_call_external_api
+
+- rule: Actualizar base de conocimiento RAG
+  steps:
+  - intent: refresh_knowledge
+  - action: action_refresh_knowledge
